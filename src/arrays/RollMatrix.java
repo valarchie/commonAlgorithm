@@ -23,7 +23,9 @@ public class RollMatrix {
 
     public static void main(String[] args) {
 
-        roll3StepMatrix(MATRIX_3, 0);
+        printMatrix(MATRIX_3);
+
+        rollMatrix90(MATRIX_3, 0);
 //        System.out.println(Arrays.toString(MATRIX_1));
 
         printMatrix(MATRIX_3);
@@ -48,7 +50,9 @@ public class RollMatrix {
     }
 
 
-    public static void roll3StepMatrix(int[][] matrix, int circle) {
+    public static void rollMatrix90(int[][] matrix, int circle) {
+
+        // 当circle为0的时候为最外圈
 
         if (matrix.length - circle * 2 <= 0) {
             return;
@@ -57,11 +61,6 @@ public class RollMatrix {
         int bound = matrix.length - circle - 1;
 
         for (int i = circle; i < matrix.length - 1 - circle; i++) {
-
-//            System.out.println(matrix[circle][i]);
-//            System.out.println(matrix[i][bound]);
-//            System.out.println(matrix[bound][bound - i + circle]);
-//            System.out.println(matrix[bound - i + circle][circle]);
 
             int a = matrix[circle][i];
             int b = matrix[i][bound];
@@ -75,7 +74,7 @@ public class RollMatrix {
 
         }
 
-        roll3StepMatrix(matrix, circle + 1);
+        rollMatrix90(matrix, circle + 1);
 
     }
 

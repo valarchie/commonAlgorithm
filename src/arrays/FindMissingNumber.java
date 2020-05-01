@@ -29,7 +29,7 @@ public class FindMissingNumber {
 
     public static void main(String[] args) {
 
-        findMissNumber2(TEST_INTS3);
+        findMissNumber1(TEST_INTS1);
 
     }
 
@@ -45,10 +45,8 @@ public class FindMissingNumber {
 
         for (int i = 0; i < ints.length; i++) {
 
-            if (ints[i] > 0) {
-                // 由于数值比下标大1， 0位置代表的是数字1
-                isExist[ints[i] - 1] = 1;
-            }
+            // 由于数值比下标大1， 0位置其实代表的是数字1
+            isExist[ints[i] - 1] = 1;
 
         }
 
@@ -64,7 +62,7 @@ public class FindMissingNumber {
 
 
     /**
-     * 我们可以利用1-100的总和为5050，我们一次减所有值，得到的差值即为删除的值
+     * 我们可以利用1-100的总和为5050，我们依次减掉数据内的所有值，得到的差值即为删除的值
      *
      */
     public static void findMissNumber2(int[] ints) {
