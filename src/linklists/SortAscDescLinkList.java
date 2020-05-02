@@ -15,8 +15,6 @@ public class SortAscDescLinkList {
 
     public static void main(String[] args) {
 
-
-
         // 初始化测试链表
         LinkNode x1 = new LinkNode(1);
         LinkNode x2 = new LinkNode(10);
@@ -44,6 +42,10 @@ public class SortAscDescLinkList {
     }
 
 
+    /**
+     * 拆分两个链表
+     * @param node
+     */
     public static void splitList(LinkNode node) {
 
         oddLinkList = node;
@@ -76,6 +78,11 @@ public class SortAscDescLinkList {
 
     }
 
+    /**
+     * 反转链表
+     * @param node
+     * @return
+     */
     public static LinkNode reverseLinkList(LinkNode node) {
 
         LinkNode cur = node;
@@ -98,6 +105,11 @@ public class SortAscDescLinkList {
     }
 
 
+    /**
+     * 合并两个链表
+     * @param oddLinkList
+     * @param evenLinkList
+     */
     public static void mergeList(LinkNode oddLinkList, LinkNode evenLinkList) {
 
         LinkNode oddTail = oddLinkList;
