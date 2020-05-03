@@ -28,7 +28,7 @@ public class PrintTreeByLevel {
             return;
         }
 
-        LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
+        LinkedList<TreeNode> queue = new LinkedList<>();
 
         queue.add(tree);
 

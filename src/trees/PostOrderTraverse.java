@@ -1,5 +1,7 @@
 package trees;
 
+import java.util.Collection;
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -12,9 +14,11 @@ public class PostOrderTraverse {
 
     public static void main(String[] args) {
 
-        postOrderTraverseRecursion(TestTreeData.TEST_TREE_1);
-        System.out.println();
-        postOrderTraverseNonRecursion(TestTreeData.TEST_TREE_1);
+//        postOrderTraverseRecursion(TestTreeData.TEST_TREE_1);
+//        System.out.println();
+//        postOrderTraverseNonRecursion(TestTreeData.TEST_TREE_1);
+//        System.out.println();
+        postOrderTraverseNonRecursion1(TestTreeData.TEST_TREE_1);
 
     }
 
@@ -61,5 +65,42 @@ public class PostOrderTraverse {
             }
         }
     }
+
+
+    /**
+     * 采用两个链表
+     * @param root
+     */
+    public static void postOrderTraverseNonRecursion1(TreeNode root) {
+
+        LinkedList<TreeNode> stack = new LinkedList<>();
+        LinkedList<TreeNode> output = new LinkedList<>();
+        if (root == null) {
+            return;
+        }
+
+        stack.add(root);
+        while (!stack.isEmpty()) {
+
+            TreeNode node = stack.pollLast();
+            output.addFirst(node);
+
+            if (node.left != null) {
+                stack.add(node.left);
+            }
+            if (node.right != null) {
+                stack.add(node.right);
+            }
+        }
+
+        for (TreeNode node : output) {
+            System.out.print(node.val + "->");
+        }
+
+    }
+
+
+
+
 
 }
