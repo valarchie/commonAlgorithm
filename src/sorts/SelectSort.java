@@ -9,14 +9,14 @@ import java.util.Arrays;
 * on: 2020/5/3
 * @email: 343928303@qq.com
 */
-public class InsertSort {
+public class SelectSort {
 
 
     public static void main(String[] args) {
 
         System.out.println(Arrays.toString(TestSortData.DISORDER_ARRAY));
 
-        insertSort(TestSortData.DISORDER_ARRAY);
+        selectSort(TestSortData.DISORDER_ARRAY);
 
         System.out.println(Arrays.toString(TestSortData.DISORDER_ARRAY));
 
@@ -25,10 +25,10 @@ public class InsertSort {
 
 
     /**
-     * 插入排序
+     * 选择排序
      * @param array
      */
-    public static void insertSort(int[] array) {
+    public static void selectSort(int[] array) {
 
         if (array.length == 0) {
             return;

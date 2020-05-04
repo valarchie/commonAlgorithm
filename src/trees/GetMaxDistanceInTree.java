@@ -1,5 +1,11 @@
 package trees;
 
+/**
+* description: 获取树的最大距离
+* @author: valarchie
+* on: 2020/5/4
+* @email: 343928303@qq.com
+*/
 public class GetMaxDistanceInTree {
 
     public static void main(String[] args) {
